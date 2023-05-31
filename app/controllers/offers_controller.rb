@@ -17,6 +17,19 @@ class OffersController < ApplicationController
     end
   end
 
+  def edit
+    @offer = Offer.find(params[:id])
+  end
+
+  def update
+    @offer = Offer.find(params[:id])
+    if @offer.update(offer_params)
+      redirect_to offers_path
+    else
+      render :edit, status: :unprocessable_entity
+    end
+  end
+
   private
 
   def offer_params
