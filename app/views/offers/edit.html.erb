@@ -1,0 +1,16 @@
+<div class="container w-50 mt-5">
+
+  <h1>Edit Offer</h1>
+
+  <%= simple_form_for @offer do |f| %>
+    <%= f.input :title, label: "Offer Title" %>
+    <%= f.input :brand, label: "Offer Brand" %>
+    <%# TODO: :condition should be `f.associasions` %>
+    <%= f.input :condition, label: "Condition" %>
+    <%= f.input :price, label: "Offer Price" %>
+    <%= f.input :city, label: "Where is the offer?" %>
+    <%= f.submit "Update Offer", class: "btn btn-primary bg-gradient w-100" %>
+  <% end %>
+
+
+</div>
