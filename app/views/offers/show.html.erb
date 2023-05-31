@@ -1,0 +1,10 @@
+<h2><%= @offer.title %></h2>
+
+<p>Brand: <%= @offer.brand %></p>
+<p>Condition: <%= @offer.condition %></p>
+<p>Price: $ <%= @offer.price %></p>
+<p>Location: <%= @offer.city %></p>
+<p>Availability: <%= @offer.status %></p>
+<p>Seller: <%= @offer.user.first_name %> <%= @offer.user.last_name %></p>
+
+<%= link_to "Go back to all bags", offers_path %>
