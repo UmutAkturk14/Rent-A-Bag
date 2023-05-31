@@ -1,2 +1,15 @@
-<h1>Offers Page</h1>
-<p><%= @offers.first.title %></p>
+<div class = "container">
+
+  <h1>Offers Page</h1>
+  <ul>
+    <% @offers.each do |offer| %>
+    <li>
+      <%= offer.title %>
+      <%= offer.brand %>
+      <%= offer.condition %>
+      <%= offer.price %>
+      <%= offer.city %>
+    </li>
+    <% end %>
+  </ul>
+</div>
