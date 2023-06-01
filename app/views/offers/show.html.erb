@@ -1,3 +1,4 @@
+<div class= "container">
 <h2><%= @offer.title %></h2>
 
 <p>Brand: <%= @offer.brand %></p>
@@ -7,4 +8,7 @@
 <p>Availability: <%= @offer.status %></p>
 <p>Seller: <%= @offer.user.first_name %> <%= @offer.user.last_name %></p>
 
-<%= link_to "Go back to all bags", offers_path %>
+<p><%= link_to "Rent this bag", new_offer_booking_path(@offer) %> </p>
+<p><%= link_to "Go back to all bags", offers_path %> </p>
+
+</div>
