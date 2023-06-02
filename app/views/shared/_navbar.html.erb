@@ -1,17 +1,23 @@
 <nav class="navbar navbar-expand-lg navbar-light bg-light">
-  <a class="navbar-brand mx-auto" href="#">Rent A Bag</a>
+  <a class="navbar-brand mx-auto" href="/">Rent A Bag</a>
   <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
     <span class="navbar-toggler-icon"></span>
   </button>
   <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
     <ul class="navbar-nav">
       <li class="nav-item">
-        <a class="nav-link" href="#">Home</a>
+        <a class="nav-link" href="/">Home</a>
       </li>
       <li class="nav-item">
         <a class="nav-link" href="#">About</a>
       </li>
       <% if user_signed_in? %>
+          <li class="nav-item">
+            <a class="nav-link" href="/offers">Discover</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="/bookings">My bookings</a>
+          </li>
           <li class="nav-item">
             <%= link_to 'Sign Out', destroy_user_session_path, data: {turbo_method: :delete}, class: 'nav-link' %>
           </li>
