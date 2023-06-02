@@ -7,6 +7,8 @@ Rails.application.routes.draw do
   # root "articles#index"
   get "/about", to: "pages#about"
 
-  resources :offers, only: [:index, :show, :new, :create, :edit, :update]
+  resources :offers, only: [:index, :show, :new, :create, :edit, :update] do
+    resources :bookings, only: [:new, :create]
+  end
 
 end
