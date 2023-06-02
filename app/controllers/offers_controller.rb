@@ -8,7 +8,7 @@ class OffersController < ApplicationController
   end
 
   def new
-    @offers = Offer.new
+    @offer = Offer.new
   end
 
   def create
@@ -37,7 +37,7 @@ class OffersController < ApplicationController
   private
 
   def offer_params
-    params.require(:offer).permit(:title, :brand, :condition, :price, :city, :status)
+    params.require(:offer).permit(:title, :brand, :condition, :price, :city, :status, photos:[])
   end
 
 end
