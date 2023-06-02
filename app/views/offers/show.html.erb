@@ -16,7 +16,8 @@
       <% end %>
     <% end %>
 
-    <p class="btn btn-success"> <%= link_to "Rent this bag", new_offer_booking_path(@offer) %> </p>
+    <p class="card-text"><small class="text-body-secondary">Last viewed 3 mins ago</small></p>
+    <p><%= link_to "Rent this bag", new_offer_booking_path(@offer), class: "btn btn-success" %></p>
   </div>
   <p class="m-3"><%= link_to "Back to all bags", offers_path %> </p>
 </div>

@@ -1,0 +1,19 @@
+<div class="container mt-5">
+  <h1><%= @offer.title %></h1>
+  <img src="#" alt="Here is the photo of a fancy bag">
+  <p><strong>Brand:</strong> <%= @offer.brand %></p>
+  <p><strong>Condition:</strong> <%= @offer.condition %></p>
+  <p><strong>Price:</strong> <%= @offer.price %></p>
+  <p><strong>City:</strong> <%= @offer.city %></p>
+
+  <h1>Booking</h1>
+  <p><strong>Start date:</strong> <%= @booking.start_date %></p>
+  <p><strong>End date:</strong> <%= @booking.end_date  %></p>
+  <p><strong>Payment method:</strong> <%= @booking.payment_method  %></p>
+  <p><strong>Booked on:</strong> <%= @booking.created_at  %></p>
+
+  <%= link_to "Cancel this booking", booking_path(@booking), data: { turbo_method: :delete, turbo_confirm: "Are you sure you want to delete this booking?" }, class: "btn btn-success" %>
+  <%= link_to "Send a message to the owner", "#", class: "btn btn-success" %>
+  <%= link_to "Return to my bookings", bookings_path, class: "btn btn-success" %>
+
+</div>
