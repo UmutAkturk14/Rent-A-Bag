@@ -3,6 +3,10 @@ class OffersController < ApplicationController
     @offers = Offer.all
   end
 
+  def show
+    @offer = Offer.find(params[:id])
+  end
+
   def new
     @offers = Offer.new
   end
@@ -14,6 +18,19 @@ class OffersController < ApplicationController
       redirect_to offers_path
     else
       render :new, status: :unprocessable_entity
+    end
+  end
+
+  def edit
+    @offer = Offer.find(params[:id])
+  end
+
+  def update
+    @offer = Offer.find(params[:id])
+    if @offer.update(offer_params)
+      redirect_to offers_path
+    else
+      render :edit, status: :unprocessable_entity
     end
   end
 

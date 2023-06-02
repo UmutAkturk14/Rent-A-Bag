@@ -1,0 +1,10 @@
+<div class="container">
+  <h2>Rent <%= @offer.title %></h2>
+
+  <%= simple_form_for [@offer, @booking] do |f| %>
+  <%= f.input :start_date %>
+  <%= f.input :end_date %>
+  <%= f.input :payment_method%>
+  <%= f.submit %>
+  <% end %>
+</div>

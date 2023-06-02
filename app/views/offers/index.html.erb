@@ -1,16 +1,18 @@
-<div class = "container">
-
-  <h1>Offers Page</h1>
-  <ul>
+<div class="container">
+  <div class="row">
     <% @offers.each do |offer| %>
-    <li>
-      <%= offer.title %>
-      <%= offer.brand %>
-      <%= offer.condition %>
-      <%= offer.price %>
-      <%= offer.city %>
-    </li>
+      <div class="col-md-3">
+        <div class="card mb-2">
+          <a href="<%= offer_path(offer) %>">
+            <%# TODO: Add img source here %>
+            <img src="#" class="card-img-top" alt="<%= offer.title %>">
+            <div class="card-body">
+              <h5 class="card-title"><%= offer.brand %></h5>
+              <p class="card-text"><%= offer.city %></p>
+            </div>
+          </a>
+        </div>
+      </div>
     <% end %>
-  </ul>
-
+  </div>
 </div>
