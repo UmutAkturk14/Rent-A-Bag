@@ -8,7 +8,8 @@ Rails.application.routes.draw do
   get "/about", to: "pages#about"
 
   resources :offers, only: [:index, :show, :new, :create, :edit, :update] do
-    resources :bookings, only: [:new, :create]
+    resources :bookings, only: [:new, :create] do
+      resources :reviews, only: [:new, :create]
+    end
   end
-
 end
