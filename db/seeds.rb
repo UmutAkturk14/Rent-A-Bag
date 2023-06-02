@@ -25,9 +25,3 @@
     #          { condition: "Good" }, { price: 1350 }, { city: "Madrid" }])
 
 require 'faker'
-
-5.times do
-  user = User.create(
-    email: Faker::Name.first_name
-  )
-end

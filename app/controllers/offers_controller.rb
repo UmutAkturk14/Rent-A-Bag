@@ -1,16 +1,16 @@
 class OffersController < ApplicationController
   def index
-    @offer = Offer.all
+    @offers = Offer.all
   end
 
   def new
-    @offer = Offer.new
+    @offers = Offer.new
   end
 
   def create
-    @offer = Offer.new(offer_params)
-    @offer.user = current_user
-    if @offer.save!
+    @offers = Offer.new(offer_params)
+    @offers.user = current_user
+    if @offers.save!
       redirect_to offers_path
     else
       render :new, status: :unprocessable_entity
