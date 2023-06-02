@@ -1,23 +1,36 @@
 <div class= "container">
 
 <div class="card mb-3">
-  <img src="..." class="card-img-top" alt="...">
+  <% if @offer.photos.attached? %>
+    <% @offer.photos.each do |photo| %>
+      <%= cl_image_tag photo.key, height: 400, width: 600, crop: :fill, class: "card-img-top"%>
+    <% end %>
+  <% else %>
+    <img class= "card-img-top" height= 400, width= 400 src= "/assets/bags/jackie_1961.jpg" alt="">
+  <% end %>
   <div class="card-body">
     <h5 class="card-title mb-3"><%= @offer.title %></h5>
     <p class="card-text">Condition: <%= @offer.condition %></p>
-    <p class="card-text">Price: <%= @offer.price %></p>
+    <p class="card-text">Price: $<%= @offer.price %></p>
     <p class="card-text">Location: <%= @offer.city %></p>
     <p class="card-text">Availability: <%= @offer.status %></p>
     <p class="card-text">Seller: <%= @offer.user.first_name %> <%= @offer.user.last_name %></p>
+    <hr>
     <% if @offer.reviews.count > 0 %>
-      <% @offer.reviews.each do |review| %>
-        <p>Reviews:</p>
-        <p><%= review.user.first_name %> <%= review.user.last_name %> -  ⭐️ * <%= review.rating %></p>
-      <% end %>
+      <div class="card">
+        <h5 class="card-header">Reviews</h5>
+        <% @offer.reviews.each do |review| %>
+          <div class="card-body">
+            <h5 class="card-title"><%= review.user.first_name %> <%= review.user.last_name %></h5>
+            <p class="card-text"><%= '⭐️' * review.rating %></p>
+            <p class="card-text"><%= review.description %></p>
+          </div>
+        <% end %>
+      </div>
+      <hr>
     <% end %>
 
-    <p class="card-text"><small class="text-body-secondary">Last viewed 3 mins ago</small></p>
-    <p><%= link_to "Rent this bag", new_offer_booking_path(@offer), class: "btn btn-success" %></p>
+      <p><%= link_to "Rent this bag", new_offer_booking_path(@offer), class: "btn btn-success" %></p>
   </div>
   <p class="m-3"><%= link_to "Back to all bags", offers_path %> </p>
 </div>
