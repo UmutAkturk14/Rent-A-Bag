@@ -24,8 +24,7 @@
 # Offer.create!([{ title: "LOULOU LEATHER CROSSBODY BAG" }, { brand: "Saint Laurent" },
     #          { condition: "Good" }, { price: 1350 }, { city: "Madrid" }])
 
-require 'faker'
-=======
+
 puts "Clearing the user database..."
 Offer.destroy_all
 User.destroy_all
