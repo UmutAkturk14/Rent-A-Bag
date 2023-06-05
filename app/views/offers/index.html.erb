@@ -1,17 +1,13 @@
 <div class="container">
-  <div class="row">
+  <div class="cards">
     <% @offers.each do |offer| %>
-      <div class="col-md-3">
-        <div class="card mb-2">
-          <a href="<%= offer_path(offer) %>">
-            <%# TODO: Add img source here %>
-            <img src="#" class="card-img-top" alt="<%= offer.title %>">
-            <div class="card-body">
-              <h5 class="card-title"><%= offer.brand %></h5>
-              <p class="card-text"><%= offer.city %></p>
-            </div>
-          </a>
-        </div>
+      <div class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/breakfast.jpg)">
+        <a href="<%= offer_path(offer) %>">
+          <%# TODO: Add img source here %>
+          <img src="#" class="card-img-top" alt="<%= offer.title %>">
+            <h5 class="card-title"><%= offer.brand %></h5>
+            <p class="card-text"><%= offer.city %></p>
+        </a>
       </div>
     <% end %>
   </div>

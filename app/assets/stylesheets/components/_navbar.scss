@@ -35,3 +35,17 @@ li {
   padding: 10px;
   list-style-type: none;
 }
+
+i {
+  color: black;
+}
+
+.nav-link {
+  border-radius: 8px;
+  &:hover {
+    color: black;
+    background-color: #FFC26F;
+    transition-duration: 0.3s;
+    // text-decoration: underline;
+  }
+}
