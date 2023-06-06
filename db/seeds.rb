@@ -24,8 +24,10 @@
 # Offer.create!([{ title: "LOULOU LEATHER CROSSBODY BAG" }, { brand: "Saint Laurent" },
     #          { condition: "Good" }, { price: 1350 }, { city: "Madrid" }])
 
+require "open-uri"
 
 puts "Clearing the user database..."
+Review.destroy_all
 Offer.destroy_all
 User.destroy_all
 
@@ -48,7 +50,8 @@ puts "All done! "
 puts "Populating the database with new offers.."
 
 20.times do
-  offer = Offer.create!(
+  file = URI.open("https://source.unsplash.com/random?handbag")
+  offer = Offer.new(
     title: Faker::Quote.robin,
     brand: ["Louis Vuitton", "Celine", "Gucci", "Hermes", "Marni"].sample,
     condition: ["Never worn", "Very good", "Fair"].sample,
@@ -57,6 +60,8 @@ puts "Populating the database with new offers.."
     status: ["available", "not_available"].sample,
     user_id: User.all.sample.id
   )
+  offer.photos.attach(io: file, filename: "nes.png", content_type: "image/png")
+  offer.save
   puts "I am creating an offer with id #{offer.id}"
 end
 
