@@ -5,7 +5,9 @@
       <img src="https://images.unsplash.com/photo-1560250097-0b93528c311a?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=687&q=80" alt="Profile Picture" class="img-fluid">
       <a href="#">
         <!-- TODO: Upload profile photo here -->
-        <button class="btn btn-primary mt-2 w-100">Edit Profile Picture</button>
+        <% if @user == current_user %>
+          <button class="btn btn-primary mt-2 w-100">Edit Profile Picture</button>
+        <% end %>
       </a>
     </div>
 
@@ -35,8 +37,10 @@
         <input type="text" class="form-control" id="location" value="[User's City, Country]" readonly>
       </div>
       <!-- TODO: Send the form here -->
-      <div class="btn btn-primary w-100 mb-2" data-action="click->profile#editButton" id="editProfileButton">Edit Profile</div>
-      <div class="btn btn-primary w-100" hidden>Save Changes</div>
+      <% if @user == current_user %>
+        <div class="btn btn-primary w-100 mb-2" data-action="click->profile#editButton" id="editProfileButton">Edit Profile</div>
+        <input type="submit" value="Save Changes" name="commit" class="btn btn-primary w-100" hidden>
+      <% end %>
     </div>
   </div>
   <hr>

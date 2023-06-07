@@ -7,7 +7,7 @@ Rails.application.routes.draw do
   # root "articles#index"
   get "/about", to: "pages#about"
   # Profile page
-  get "/profile", to: "profiles#show"
+  get "/profile", to: "profiles#my_page"
 
   resources :offers, only: [:index, :show, :new, :create, :edit, :update] do
     resources :bookings, only: [:new, :create] do
@@ -15,4 +15,5 @@ Rails.application.routes.draw do
     end
   end
   resources :bookings, only: [:index, :show, :destroy]
+  resources :profiles, only: [:show, :edit, :update]
 end

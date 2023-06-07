@@ -1,0 +1,15 @@
+<h1>My rented bags:</h1>
+
+
+ <h2><% @bookings.each do |booking| %>
+<div class="container">
+<div class="card-product">
+  <img src="https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/skateboard.jpg" />
+  <div class="card-product-infos">
+  <h5><%= link_to booking.offer.title, booking_path(booking) %></h5>
+  <p>Product description with<strong>relevant info</strong> only.</p>
+  </div>
+</div>
+
+</div>
+<% end %></h2>
