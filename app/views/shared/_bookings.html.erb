@@ -1,13 +1,17 @@
-<h1>My rented bags:</h1>
 
+<div class="container my-4">
+  <div class="container btn btn-warning bg-gradient w-100 fs-3 text-white">
+    My bookings
+  </div>
+</div>
 
- <h2><% @bookings.each do |booking| %>
+<% @bookings.each do |booking| %>
 <div class="container">
-<div class="card-product">
-  <img src="https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/skateboard.jpg" />
-  <div class="card-product-infos">
-  <h5><%= link_to booking.offer.title, booking_path(booking) %></h5>
-  <p>Product description with<strong>relevant info</strong> only.</p>
+  <div class="card-product mb-3">
+    <%= cl_image_tag(booking.offer.photos.first.key, height: 200, width: 300, class:"card-img-top")%>
+    <div class="card-product-infos">
+    <h5><%= link_to booking.offer.title, booking_path(booking) %></h5>
+    <p>Product description with <strong>relevant info</strong> only.</p>
   </div>
 </div>
 
