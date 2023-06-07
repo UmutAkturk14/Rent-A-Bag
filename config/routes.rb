@@ -9,6 +9,10 @@ Rails.application.routes.draw do
   # Profile page
   get "/profile", to: "profiles#show"
 
+  get "/mybookings", to: "booking_pages#show"
+
+
+
   resources :offers, only: [:index, :show, :new, :create, :edit, :update] do
     resources :bookings, only: [:new, :create] do
       resources :reviews, only: [:new, :create]
