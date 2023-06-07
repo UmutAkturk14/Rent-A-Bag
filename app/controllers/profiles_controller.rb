@@ -1,4 +1,6 @@
 class ProfilesController < ApplicationController
+  before_action :set_user, only: [:update]
+
   def show
     @user = User.find(params[:id])
   end
@@ -13,7 +15,8 @@ class ProfilesController < ApplicationController
   end
 
   def update
-    raise
+    @user.update(user_params)
+    redirect_to my_profile_path
   end
 
   private
