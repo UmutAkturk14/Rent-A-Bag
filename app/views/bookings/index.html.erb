@@ -1,45 +1,6 @@
-<<<<<<< HEAD
-<h1>My rented bags:</h1>
-
-
- <h2><% @bookings.each do |booking| %>
-<div class="container">
-<div class="card-product">
-  <img src="https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/skateboard.jpg" />
-  <div class="card-product-infos">
-  <h5><%= link_to booking.offer.title, booking_path(booking) %></h5>
-  <p>Product description with<strong>relevant info</strong> only.</p>
+<div class="container my-4">
+  <div class="container btn btn-warning bg-gradient w-100 fs-3 text-white">
+    My bookings
   </div>
 </div>
-
-</div>
-<% end %></h2>
-
-
-
-
-
-
-
-<% @bookings.each do |booking| %>
-  <h5><%= link_to booking.offer.title, booking_path(booking) %></h5>
-<% end %>
-=======
-
-
-<div class="container">
-  <% @bookings.each do |booking| %>
-    <div class="card-product">
-      <%= cl_image_tag(booking.offer.photos.first.key)%>
-      <div class="card-product-infos">
-        <h2><%= booking.offer.title %></h2>
-        <p>Brand: <%= booking.offer.brand %></p>
-        <p>Condition: <%= booking.offer.condition %></p>
-        <p>Price: <%= booking.offer.price %></p>
-
-
-      </div>
-    </div>
-  <% end %>
-</div>
->>>>>>> cd76e8179e90cbaed60df05291109c3e5033cb15
+<%= render "shared/bookings" %>
