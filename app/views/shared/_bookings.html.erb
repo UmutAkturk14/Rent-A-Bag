@@ -1,0 +1,12 @@
+<% @bookings.each do |booking| %>
+<div class="container my-3">
+  <div class="card-product mb-3">
+    <%= cl_image_tag(booking.offer.photos.first.key, height: 200, width: 300, class:"card-img-top")%>
+    <div class="card-product-infos">
+    <h5><%= link_to booking.offer.title, booking_path(booking) %></h5>
+    <p>Product description with <strong>relevant info</strong> only.</p>
+  </div>
+</div>
+
+</div>
+<% end %></h2>

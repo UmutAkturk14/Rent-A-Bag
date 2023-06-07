@@ -1,17 +1,6 @@
-
-
-<div class="container">
-  <% @bookings.each do |booking| %>
-    <div class="card-product">
-      <%= cl_image_tag(booking.offer.photos.first.key)%>
-      <div class="card-product-infos">
-        <h2><%= booking.offer.title %></h2>
-        <p>Brand: <%= booking.offer.brand %></p>
-        <p>Condition: <%= booking.offer.condition %></p>
-        <p>Price: <%= booking.offer.price %></p>
-
-
-      </div>
-    </div>
-  <% end %>
+<div class="container my-4">
+  <div class="container btn btn-warning bg-gradient w-100 fs-3 text-white">
+    My bookings
+  </div>
 </div>
+<%= render "shared/bookings" %>
