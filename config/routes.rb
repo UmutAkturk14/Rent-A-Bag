@@ -9,7 +9,6 @@ Rails.application.routes.draw do
   # Profile page
   get "/profile", to: "profiles#show"
 
-  get "/mybookings", to: "booking_pages#show"
 
 
 
