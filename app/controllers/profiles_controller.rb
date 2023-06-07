@@ -13,7 +13,7 @@ class ProfilesController < ApplicationController
   end
 
   def update
-    puts "Welcome to the update page"
+    raise
   end
 
   private
