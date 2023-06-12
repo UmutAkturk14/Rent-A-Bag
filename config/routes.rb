@@ -9,7 +9,7 @@ Rails.application.routes.draw do
   # Profile page
   get "/profile", to: "profiles#my_page", as: "my_profile"
 
-  resources :offers, only: [:index, :show, :new, :create, :edit, :update] do
+  resources :offers do
     member do
       patch 'reject'
       patch 'accept'

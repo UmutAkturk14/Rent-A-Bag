@@ -1,0 +1,16 @@
+<% @user.offers.each do |offer| %>
+  <div class="container my-3">
+    <div class="card-product mb-3">
+        <%= cl_image_tag(offer.photos.first.key, height: 200, width: 300, class:"card-img-top")%>
+        <div class="card-produc-infos mx-3">
+          <h5><%= link_to offer.title, offer_path(offer) %></h5>
+          <p class="card-text"><strong>Condition:</strong> <%= offer.condition %></p>
+          <p class="card-text"><strong>Price: $</strong><%= offer.price %></p>
+          <p class="card-text"><strong>Location:</strong> <%= offer.city %></p>
+          <p class="card-text"><strong>Availability:</strong> <%= offer.status %></p>
+          <div class="buttons my-1">
+            <%= link_to "Delete offer", offer_path(offer), data: { turbo_method: :delete, turbo_confirm: "Are you sure you want to delete this offer?" }, class: "btn btn-sm rounded-pill btn-booking", style: "background-color: #FFC26F;" %>
+        </div>
+    </div>
+  </div>
+<% end %>

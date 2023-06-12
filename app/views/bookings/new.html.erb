@@ -4,7 +4,7 @@
   <%= simple_form_for [@offer, @booking] do |f| %>
   <%= f.input :start_date %>
   <%= f.input :end_date %>
-  <%= f.input :payment_method%>
+  <%= f.association :payment_method, label_method: :title %>
   <%= f.submit %>
   <% end %>
 </div>

@@ -1,4 +1,5 @@
 class OffersController < ApplicationController
+  before_action :set_offer, only: [:destroy]
   def index
     if params[:query].present?
       @offers = Offer.search_offers(params[:query])
@@ -51,10 +52,19 @@ class OffersController < ApplicationController
     redirect_to current_user.my_profile, notice: 'Offer accepted'
   end
 
+  def destroy
+    @offer.destroy
+    redirect_to offers_path, notice: "Offer has been successfully deleted."
+  end
+
   private
 
   def offer_params
     params.require(:offer).permit(:title, :brand, :condition, :price, :city, :status, photos:[])
+  end
+
+  def set_offer
+    @offer = Offer.find(params[:id])
   end
 
 end
