@@ -1,10 +1,12 @@
-<div class="container">
-  <h2>Rent <%= @offer.title %></h2>
+<div class="container w-50 my-3">
+  <h2 class="text-center">Rent <%= @offer.title %></h2>
 
   <%= simple_form_for [@offer, @booking] do |f| %>
   <%= f.input :start_date %>
   <%= f.input :end_date %>
   <%= f.association :payment_method, label_method: :title %>
-  <%= f.submit %>
+  <div class="d-flex flex-column align-items-center">
+    <%= f.submit 'Book this bag!', class: "btn btn-booking w-50", style: "background-color: #FFC26F;"  %>
+  </div>
   <% end %>
 </div>
