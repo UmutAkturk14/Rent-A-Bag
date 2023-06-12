@@ -8,8 +8,8 @@
     <%= f.input :price %>
     <%= f.input :city %>
     <%= f.input :photos, as: :file, input_html: { multiple: true } %>
-    <div>
-      <%= f.submit 'Create offer', class: "btn btn-booking w-100", style: "background-color: #FFC26F;"  %>
+    <div class="d-flex flex-column align-items-center">
+      <%= f.submit 'Create offer', class: "btn btn-booking w-50", style: "background-color: #FFC26F;"  %>
     </div>
   <% end %>
 </div>
