@@ -1,5 +1,8 @@
 <div class="container my-5">
-  <p>Here to make an offer? <a href="/offers/new">Make an offer!</a></p>
+  <%= render "shared/search"%>
+  <div class="container">
+    <p>Here to make an offer? <a href="/offers/new">Make an offer!</a></p>
+  </div>
   <div class="d-flex flex-wrap justify-content-between">
     <% @offers.each do |offer| %>
       <div class="card rounded-4 overflow-hidden mb-3" style="width: 15rem">
@@ -9,8 +12,7 @@
           <p class="card-text"><%= offer.brand %></p>
         <a href=<%= offer_path(offer) %> class="btn btn-primary">+</a>
         </div>
-
       </div>
-      <% end %>
+    <% end %>
   </div>
 </div>

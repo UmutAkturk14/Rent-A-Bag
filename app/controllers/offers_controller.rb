@@ -1,6 +1,11 @@
 class OffersController < ApplicationController
   def index
-    @offers = Offer.all
+    if params[:query].present?
+      @offers = Offer.search_offers(params[:query])
+    else
+      @user_offers = current_user.offers
+      @offers = Offer.where.not(user_id: current_user)
+    end
   end
 
   def show
@@ -32,6 +37,18 @@ class OffersController < ApplicationController
     else
       render :edit, status: :unprocessable_entity
     end
+  end
+
+  def reject
+    @offers = Offer.find(params[:id])
+    @offers.update(status: "rejected")
+    redirect_to current_user.my_profile, notice: 'Offer rejected'
+  end
+
+  def accept
+    @offers = Offer.find(params[:id])
+    @offers.update(status: "accepted")
+    redirect_to current_user.my_profile, notice: 'Offer accepted'
   end
 
   private
