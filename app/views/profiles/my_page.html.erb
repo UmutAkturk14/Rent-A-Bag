@@ -1,2 +1,20 @@
 <%= render "shared/profile" %>
 <%= render "shared/bookings" %>
+
+<div class="container">
+  <h1>My Rentals</h1>
+    <% @user_offers.each do |offer| %>
+      <div class="container my-3">
+        <div class="card-product mb-4   ">
+            <%= cl_image_tag(offer.photos.first.key, height: 200, width: 300, class:"card-img-top")%>
+            <div class="card-produc-infos">
+              <h5 class="card-title mb-3"><%= offer.title %></h5>
+              <p class="card-text">Condition: <%= offer.condition %></p>
+              <p class="card-text">Price: $<%= offer.price %></p>
+              <p class="card-text">Location: <%= offer.city %></p>
+              <p class="card-text">Availability: <%= offer.status %></p>
+            </div>
+      </div>
+    </div>
+    <% end %>
+</div>

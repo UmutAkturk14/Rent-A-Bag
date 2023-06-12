@@ -8,6 +8,7 @@ class ProfilesController < ApplicationController
   def my_page
     @user = current_user
     @bookings = Booking.where(user: @user)
+    @user_offers = current_user.offers
   end
 
   def edit
