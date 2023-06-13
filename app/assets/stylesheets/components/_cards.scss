@@ -67,10 +67,6 @@
   }
 }
 
-.card-text {
-  // background-color: white;
-}
-
 .card-product {
   overflow: hidden;
   height: 170px;
@@ -102,4 +98,10 @@
 
 .card-product .card-product-infos {
   padding: 16px;
+}
+
+.offer-img {
+  width: 100%;
+  height: 80%;
+  object-fit: cover;
 }

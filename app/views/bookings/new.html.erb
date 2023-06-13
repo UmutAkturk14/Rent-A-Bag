@@ -1,12 +1,23 @@
 <div class="container w-50 my-3">
   <h2 class="text-center">Rent <%= @offer.title %></h2>
 
-  <%= simple_form_for [@offer, @booking] do |f| %>
-  <%= f.input :start_date %>
-  <%= f.input :end_date %>
-  <%= f.association :payment_method, label_method: :title %>
-  <div class="d-flex flex-column align-items-center">
-    <%= f.submit 'Book this bag!', class: "btn btn-booking w-50", style: "background-color: #FFC26F;"  %>
+  <div class="container">
+    <div class="row">
+      <div class="col-md-4">
+        <%= cl_image_tag @offer.photos.first.key, width: 600, crop: :fill, class: "card-img-top rounded-3 border border-2" %>
+      </div>
+
+      <div class="col-md-8">
+        <%= simple_form_for [@offer, @booking] do |f| %>
+        <%= f.input :start_date %>
+        <%= f.input :end_date %>
+        <%= f.association :payment_method, label_method: :title %>
+        <div class="d-flex flex-column align-items-center">
+          <%= f.submit 'Book this bag!', class: "btn btn-booking w-50", style: "background-color: #FFC26F;"  %>
+          <%= link_to 'Go back', offer_path(@offer), class: "btn btn-booking w-25 mt-5", style: "background-color: #FFC26F;"  %>
+        </div>
+        <% end %>
+      </div>
+    </div>
   </div>
-  <% end %>
 </div>

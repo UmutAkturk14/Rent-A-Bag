@@ -25,7 +25,7 @@
           <div class="card item" style="width: 10rem;">
             <%= cl_image_tag(i.photos.first.key, height: 200, width: 300, class: "card-img-top") %>
             <div class="card-body">
-              <%= link_to "#{i.title}", offer_path(i), class: "card-text text-center"  %>
+              <%= link_to "#{i.title}", offer_path(i), class: "btn offer d-flex justify-content-center"  %>
             </div>
           </div>
         </div>
@@ -46,11 +46,11 @@
           </div>
 
           <div class="carousel-item">
-            <img src="https://images.unsplash.com/photo-1496747611176-843222e1e57c?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1173&q=80" alt="img" class="img-thumbnail" style="height: 350px; width: 600px; background-size: cover;">
+            <img src="https://images.unsplash.com/photo-1496747611176-843222e1e57c?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1173&q=80" alt="img" class="img-thumbnail" style="height: 350px; width: 660px; background-size: cover;">
           </div>
 
           <div class="carousel-item">
-            <img src="https://images.unsplash.com/photo-1601871925712-3c803d50fa72?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80" alt="img" class="img-thumbnail" style="height: 350px; width: 600px; background-size: cover;">
+            <img src="https://images.unsplash.com/photo-1601871925712-3c803d50fa72?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80" alt="img" class="img-thumbnail" style="height: 350px; width: 660px; background-size: cover;">
           </div>
         </div>
         <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="prev">
@@ -64,11 +64,11 @@
       </div>
     </div>
 
-    <div class="col-md-6">
-      <div class="container text-center mt-5">
+    <div class="col-md-6 ms-0">
+      <div class="container text-center mx-5 my-5">
       <h1 class="fs-1 mt-0">Summer Style Unleashed!</h1>
-      <p class="fs-5 mt-5">Elevate Your Summer Wardrobe with Designer Bags That Radiate Sophistication and Adventure. Shop Now and Embrace the Season in Luxurious Fashion!</p>
-      <%= link_to 'Show now!', offers_path, class: "btn btn-booking w-50", style: "background-color: #FFC26F;"   %>
+      <p class="fs-5 mt-5" >Elevate Your Summer Wardrobe with Designer Bags That Radiate Sophistication and Adventure. Shop Now and Embrace the Season in Luxurious Fashion!</p>
+      <%= link_to 'Shop now!', offers_path, class: "btn btn-booking w-50", style: "background-color: #FFC26F;"   %>
       </div>
     </div>
   </div>
