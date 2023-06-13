@@ -15,41 +15,60 @@
           <div class="card-body">
             <h2 class="card-title text-center text-shadow">Trend Alert</h2>
             <p class="card-text text-center">Stay Ahead of the Fashion Curve with These Statement Bags!</p>
-            <a href="/offers" class="btn offer d-flex justify-content-center">What's on offer?</a>
+            <%= link_to "What's on offer?", offers_path, class: "btn offer d-flex justify-content-center"  %>
           </div>
         </div>
       </div>
-      <div class="col-2 mt-3 mb-3">
-        <div class="card item" style="width: 10rem;">
-          <img src="https://images.unsplash.com/photo-1584917865442-de89df76afd3?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=735&q=80" class="card-img-top" alt="...">
-          <div class="card-body">
-            <p class="card-text text-center">OFFER TITLE</p>
+
+      <% @homepage_items.each do |i| %>
+        <div class="col-2 mt-3 mb-3">
+          <div class="card item" style="width: 10rem;">
+            <%= cl_image_tag(i.photos.first.key, height: 200, width: 300, class: "card-img-top") %>
+            <div class="card-body">
+              <%= link_to "#{i.title}", offer_path(i), class: "card-text text-center"  %>
+            </div>
           </div>
         </div>
+      <% end %>
+
+    </div>
+  </div>
+</div>
+
+<div class="container mx-5 my-5">
+  <div class="row">
+    <div class="col-md-6">
+
+      <div id="carouselExampleControls" class="carousel slide" data-bs-ride="carousel">
+        <div class="carousel-inner" style="height: 300px;">
+          <div class="carousel-item active">
+          <img src="https://images.unsplash.com/photo-1473496169904-658ba7c44d8a?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80" alt="img" class="img-thumbnail" style="height: 350px; width: 660px; background-size: cover;">
+          </div>
+
+          <div class="carousel-item">
+            <img src="https://images.unsplash.com/photo-1496747611176-843222e1e57c?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1173&q=80" alt="img" class="img-thumbnail" style="height: 350px; width: 600px; background-size: cover;">
+          </div>
+
+          <div class="carousel-item">
+            <img src="https://images.unsplash.com/photo-1601871925712-3c803d50fa72?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80" alt="img" class="img-thumbnail" style="height: 350px; width: 600px; background-size: cover;">
+          </div>
+        </div>
+        <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="prev">
+          <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+          <span class="visually-hidden">Previous</span>
+        </button>
+        <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="next">
+          <span class="carousel-control-next-icon" aria-hidden="true"></span>
+          <span class="visually-hidden">Next</span>
+        </button>
       </div>
-      <div class="col-2 mt-3 mb-3">
-        <div class="card item" style="width: 10rem;">
-          <img src="https://images.unsplash.com/photo-1590874103328-eac38a683ce7?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=738&q=80" class="card-img-top" alt="...">
-          <div class="card-body">
-            <p class="card-text text-center">OFFER TITLE</p>
-          </div>
-        </div>
-      </div>
-      <div class="col-2 mt-3 mb-3">
-        <div class="card item" style="width: 10rem;">
-          <img src="https://images.unsplash.com/photo-1682745230951-8a5aa9a474a0?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=687&q=80" class="card-img-top" alt="...">
-          <div class="card-body">
-            <p class="card-text text-center">OFFER TITLE</p>
-          </div>
-        </div>
-      </div>
-      <div class="col-2 mt-3 mb-3">
-        <div class="card item" style="width: 10rem;">
-          <img src="https://images.unsplash.com/photo-1603009135528-7ad60fc1ffe4?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=735&q=80" class="card-img-top" alt="...">
-          <div class="card-body">
-            <p class="card-text text-center">OFFER TITLE</p>
-          </div>
-        </div>
+    </div>
+
+    <div class="col-md-6">
+      <div class="container text-center mt-5">
+      <h1 class="fs-1 mt-0">Summer Style Unleashed!</h1>
+      <p class="fs-5 mt-5">Elevate Your Summer Wardrobe with Designer Bags That Radiate Sophistication and Adventure. Shop Now and Embrace the Season in Luxurious Fashion!</p>
+      <%= link_to 'Show now!', offers_path, class: "btn btn-booking w-50", style: "background-color: #FFC26F;"   %>
       </div>
     </div>
   </div>

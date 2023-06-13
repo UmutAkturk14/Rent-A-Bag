@@ -50,17 +50,25 @@
   <% if @user == current_user %>
     <% @bookings = Booking.where(user: @user) %>
     <hr>
-    <div class="container my-4 w-50">
-      <div class="container btn btn-warning bg-gradient w-100 fs-3 text-white rounded-3">
+
+    <% if @user.bookings.present? %>
+      <div class="container my-4 w-50">
+        <div class="container btn btn-warning bg-gradient w-100 fs-3 text-white rounded-3">
         My bookings
+        </div>
       </div>
-    </div>
     <%= render "shared/bookings" %>
-    <div class="container my-4 w-50">
-      <div class="container btn btn-warning bg-gradient w-100 fs-3 text-white rounded-3">
+    <% end %>
+
+
+    <% if @user.offers.present? %>
+      <div class="container my-4 w-50">
+        <div class="container btn btn-warning bg-gradient w-100 fs-3 text-white rounded-3">
         My rentals
+        </div>
       </div>
-    </div>
+    <% end %>
+
     <%= render "shared/rentals" %>
   <% end %>
 </div>

@@ -28,8 +28,10 @@ class BookingsController < ApplicationController
   end
 
   def destroy
-    @booking.destroy
-    redirect_to bookings_path, notice: "Booking successfully deleted."
+    if @booking.destroy
+      flash[:notice] = "Booking has been successfully deleted."
+      redirect_back(fallback_location: my_profile_path)
+    end
   end
 
   private
