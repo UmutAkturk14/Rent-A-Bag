@@ -18,7 +18,7 @@
           <p class="card-text">Price: $<%= @offer.price %></p>
           <p class="card-text">Location: <%= @offer.city %></p>
           <p class="card-text">Availability: <%= @offer.status %></p>
-          <p class="card-text">Seller: <%= @offer.user.first_name %> <%= @offer.user.last_name %></p>
+          <p class="card-text">Seller: <%= link_to "#{@offer.user.first_name} #{@offer.user.last_name}", profile_path(@offer.user) %></p>
           <hr>
           <% if @offer.reviews.count > 0 %>
             <div class="card">

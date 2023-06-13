@@ -1,6 +1,6 @@
-<div class="container my-3">
+<div class="container my-3 w-50">
   <h2 class="text-center fw-bold">New Offer</h2>
-  <p class="text-center">Give you bag a new temporary home. List your bag here for our global fashion community!</p>
+  <p class="text-center">Give your bag a new temporary home. List your bag here for our global fashion community!</p>
   <%= simple_form_for [@offer] do |f| %>
     <%= f.input :title %>
     <%= f.input :brand %>
@@ -8,6 +8,8 @@
     <%= f.input :price %>
     <%= f.input :city %>
     <%= f.input :photos, as: :file, input_html: { multiple: true } %>
-    <%= f.submit %>
+    <div class="d-flex flex-column align-items-center">
+      <%= f.submit 'Create offer', class: "btn btn-booking w-50", style: "background-color: #FFC26F;"  %>
+    </div>
   <% end %>
 </div>

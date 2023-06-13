@@ -7,7 +7,6 @@ class ProfilesController < ApplicationController
 
   def my_page
     @user = current_user
-    @bookings = Booking.where(user: @user)
     @user_offers = current_user.offers
   end
 
@@ -17,7 +16,7 @@ class ProfilesController < ApplicationController
 
   def update
     @user.update(user_params)
-    redirect_to my_profile_path
+    redirect_to my_profile_path, notice: "User has been successfully updated"
   end
 
   private
