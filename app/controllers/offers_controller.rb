@@ -21,6 +21,7 @@ class OffersController < ApplicationController
     @offers = Offer.new(offer_params)
     @offers.user = current_user
     if @offers.save!
+      flash[:notice] = "Offer has been successfully created."
       redirect_to offers_path
     else
       render :new, status: :unprocessable_entity
@@ -53,8 +54,10 @@ class OffersController < ApplicationController
   end
 
   def destroy
-    @offer.destroy
-    redirect_to offers_path, notice: "Offer has been successfully deleted."
+    if @offer.destroy
+      flash[:notice] = "Offer has been successfully deleted."
+      redirect_back(fallback_location: my_profile_path)
+    end
   end
 
   private
