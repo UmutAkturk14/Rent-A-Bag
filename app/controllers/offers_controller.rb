@@ -11,6 +11,12 @@ class OffersController < ApplicationController
 
   def show
     @offer = Offer.find(params[:id])
+    offers = Offer.all
+    @homepage_items = []
+    4.times do |_|
+      sampled_item = offers.sample
+      @homepage_items << sampled_item
+    end
   end
 
   def new

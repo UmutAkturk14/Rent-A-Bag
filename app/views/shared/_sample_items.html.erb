@@ -1,0 +1,10 @@
+<% @homepage_items.each do |i| %>
+  <div class="col-2 mt-3 mb-3">
+    <div class="card item" style="width: 10rem;">
+      <%= cl_image_tag(i.photos.first.key, height: 200, width: 300, class: "card-img-top") %>
+      <div class="card-body">
+        <%= link_to "#{i.title}", offer_path(i), class: "btn btn-booking w-50", style: "background-color: #FFC26F;"    %>
+      </div>
+    </div>
+  </div>
+<% end %>
