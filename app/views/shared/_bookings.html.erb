@@ -3,7 +3,7 @@
   <div class="card-product mb-3">
     <%= cl_image_tag(booking.offer.photos.first.key, height: 200, width: 300, class:"card-img-top")%>
     <div class="card-product-infos">
-    <h5><%= link_to booking.offer.title, booking_path(booking), class: "text-decoration-none" %></h5>
+    <h5><%= booking.offer.title %></h5>
     <p><strong>Start Date: </strong><%= booking.start_date %></p>
     <p><strong>End Date: </strong><%= booking.end_date %></p>
     <p><strong>Paid By: </strong><%= booking.payment_method.title %></p>
