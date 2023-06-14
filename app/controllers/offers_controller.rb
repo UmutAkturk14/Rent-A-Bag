@@ -13,16 +13,14 @@ class OffersController < ApplicationController
     @offer = Offer.find(params[:id])
     offers = Offer.all
     @homepage_items = []
-    4.times do |_|
+    6.times do |_|
       sampled_item = offers.sample
       @homepage_items << sampled_item
     end
-    @markers = offers.geocoded.map do |offer|
-      {
-        lat: offer.latitude,
-        lng: offer.longitude
-      }
-    end
+    @markers = [{
+      lat: @offer.latitude,
+      lng: @offer.longitude
+    }]
   end
 
   def new
