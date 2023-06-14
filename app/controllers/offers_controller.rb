@@ -17,6 +17,12 @@ class OffersController < ApplicationController
       sampled_item = offers.sample
       @homepage_items << sampled_item
     end
+    @markers = offers.geocoded.map do |offer|
+      {
+        lat: offer.latitude,
+        lng: offer.longitude
+      }
+    end
   end
 
   def new
