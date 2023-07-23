@@ -8,9 +8,9 @@ To get started with ZoneFit, follow these steps:
 
 1. Clone this repository.
 2. Install the required dependencies by running `bundle install` and `yarn install`.
-3. Configure the environment variables. You will need to provide the necessary API keys and credentials for accessing YouTube and any other external services used by the app.
+3. Configure the environment variables. You will need to provide the necessary API keys and credentials for accessing Cloudinary and Mapbox services used by the app.
 4. Start the development server with `rails s` and `yarn build --watch`.
-5. Open your browser and navigate to `http://localhost:3000` to access the ZoneFit app.
+5. Open your browser and navigate to `http://localhost:3000` to access the Chic Swap app.
 
 ## Technologies Used
 
