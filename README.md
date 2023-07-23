@@ -4,7 +4,7 @@ Chic Swap is a marketplace app developed for the Le Wagon Web Development bootca
 
 ## Getting Started
 
-To get started with ZoneFit, follow these steps:
+To get started with Chic Swap, follow these steps:
 
 1. Clone this repository.
 2. Install the required dependencies by running `bundle install` and `yarn install`.
@@ -32,7 +32,7 @@ Chic Swap is built using the following technologies and frameworks:
 
 ## Contributing
 
-We welcome contributions to ZoneFit! If you would like to contribute, please follow these steps:
+We welcome contributions to Chic Swap! If you would like to contribute, please follow these steps:
 
 1. Fork this repository.
 2. Create a new branch for your feature or bug fix.
